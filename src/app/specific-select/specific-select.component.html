@@ -1,0 +1,8 @@
+<app-generic-select label="Specific Select" [items]="items">
+  <span
+    *appOptionsTemplate="let item = item"
+    [style.color]="item.Value === otherItem.Value ? 'red' : undefined"
+  >
+    Specific Select Option - {{ item.Value }}, {{ item.Text }}
+  </span>
+</app-generic-select>

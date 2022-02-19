@@ -1,0 +1,20 @@
+<mat-form-field appearance="outline">
+  <mat-label *ngIf="label">{{ label }}</mat-label>
+
+  <mat-select>
+    <mat-option *ngFor="let item of items" [value]="item.Value">
+      <ng-container *ngIf="contentTemplate; else basicTemplate">
+        <ng-container
+          *ngTemplateOutlet="
+            contentTemplate.templateRef;
+            context: { item: item }
+          "
+        ></ng-container>
+      </ng-container>
+
+      <ng-template #basicTemplate>
+        {{ item.Text }}
+      </ng-template>
+    </mat-option>
+  </mat-select>
+</mat-form-field>

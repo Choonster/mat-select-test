@@ -3,10 +3,10 @@
 
   <mat-select>
     <mat-option *ngFor="let item of items" [value]="item.Value">
-      <ng-container *ngIf="contentTemplate; else basicTemplate">
+      <ng-container *ngIf="optionsTemplate; else basicTemplate">
         <ng-container
           *ngTemplateOutlet="
-            contentTemplate.templateRef;
+            optionsTemplate.templateRef;
             context: { item: item }
           "
         ></ng-container>

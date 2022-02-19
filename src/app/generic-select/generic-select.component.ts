@@ -11,7 +11,7 @@ export class GenericSelectComponent {
   @Input() label: string | undefined;
   @Input() items: SelectListItem[] | undefined;
 
-  @ContentChild(OptionsTemplateDirective) contentTemplate:
+  @ContentChild(OptionsTemplateDirective) optionsTemplate:
     | OptionsTemplateDirective
     | undefined;
 }
